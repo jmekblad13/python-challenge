@@ -1,9 +1,11 @@
 import os
 import csv
 
-fileset = ["1","2"]
+#fileset number can change to work with multiple or different files
+fileset = ["2"]
+
 months = 0
-revenue = float(0)
+revenue = float(0.00)
 previous = float(0)
 change = float(0)
 totalchange = float(0)
@@ -24,7 +26,7 @@ for i in fileset:
         next(csvreader, None)
         for row in csvreader:
             months = months + 1
-            revenue = revenue + float(row[1])
+            revenue = revenue + float(row[1])            
             change = float(row[1]) - previous
             totalchange = totalchange + change
             if change > greatest_increase:
@@ -41,10 +43,23 @@ print("Financial Analysis")
 print("----------------------------")
 print("Total Months: " + str(months))
 print("Total Revenue: $" + str(revenue))
-print("Average Revenue Change: $" + str(totalchange/(months-1)))
+print("Average Revenue Change: $" + str(round(totalchange/(months-1),0)))
 print("Greatest Increase in Revenue: " + greatest_increase_month + " ($" + str(greatest_increase) + ")")
 print("Greatest Decrease in Revenue: " + greatest_decrease_month + " ($" + str(greatest_decrease) + ")")
 print("```")
 
+output_path = os.path.join('new.csv')
 
-#export as data file
+with open(output_path, 'w', newline='') as csvfile:
+
+    csvwriter = csv.writer(csvfile, delimiter=',')
+
+    csvwriter.writerow(["```"])
+    csvwriter.writerow(["Financial Analysis"])
+    csvwriter.writerow(["----------------------------"])
+    csvwriter.writerow(["Total Months: " + str(months)])
+    csvwriter.writerow(["Total Revenue: $" + str(revenue)])
+    csvwriter.writerow(["Average Revenue Change: $" + str(round(totalchange/(months-1),0))])
+    csvwriter.writerow(["Greatest Increase in Revenue: " + greatest_increase_month + " ($" + str(greatest_increase) + ")"])
+    csvwriter.writerow(["Greatest Decrease in Revenue: " + greatest_decrease_month + " ($" + str(greatest_decrease) + ")"])
+    csvwriter.writerow(["```"])

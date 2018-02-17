@@ -1,5 +1,6 @@
 import os
 import csv
+import datetime
 
 us_state_abbrev = {
     'Alabama': 'AL',
@@ -54,12 +55,9 @@ us_state_abbrev = {
     'Wyoming': 'WY',
 }
 
-
 total = 0
 
-
-
-
+# change this list to do multiple files or change files
 fileset = ["1","2"]
 
 for i in fileset:
@@ -83,10 +81,11 @@ for i in fileset:
         for row in csvreader:
             
             empID.append(row[0])
-            firstName.append(row[1])
-            lastName.append(row[1])
-            DOB.append(row[2])
-            SSN.append("***-**-" + right(row[3],4))
+            full_name = row[1].split(" ")
+            firstName.append(full_name[0])
+            lastName.append(full_name[1])
+            DOB.append(datetime.datetime.strptime(str(row[2]),"%Y-%m-%d").strftime("%m/%d/%Y"))
+            SSN.append("***-**-" + str(row[3])[-4:])
             state.append(us_state_abbrev[row[4]])
         
 
@@ -94,7 +93,7 @@ for i in fileset:
     cleaned_csv = zip(empID, firstName, lastName, DOB, SSN, state)
 
     # Set variable for output file
-    output_filename = "employee_data"
+    output_filename = "employee_data.csv"
 
     output_file = os.path.join(output_filename)
 
