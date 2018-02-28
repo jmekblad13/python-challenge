@@ -1,0 +1,4 @@
+Three Observable Trends:
+1) Purchasers are overwhelming male by count, however the group of non-observable gender purchasers spend the most by average purchase price.
+2) As I expected, 15 to 29 year olds make more purchases and spend more overall.  The group between 20-24, who presumably have fewer child obligations and a little more spending money, lead in purchase count and purchase value.
+3) It is rear for a user to make 4 or 5 purchases.  I expected that there would a higher proportion of purchases made by fewer of the users.
