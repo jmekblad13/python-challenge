@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>WAKE UP SHEEPLE!</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css" />
+  <script type ="text/javascript" src = "https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script type ="text/javascript" src = "https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+  <script type ="text/javascript" src = "https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+  
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="styles.css"> -->
+</head>
+
+<body>
+  
+    <!-- <div class="row">
+      <div class="col-md-4">
+        
+          <nav aria-label="Page navigation">
+              <ul class="pagination">
+                <li>
+                  <a href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                  </a>
+                </li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li>
+                  <a href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+               
+        <div class="dataTables_length" id="example_length">
+          <label>Show 
+            <select name="example_length" aria-controls="example" class> 
+              <option value="10">10</option>
+              <option value="25">25</option>
+              <option value="50">50</option>
+              <option value="100">100</option>
+            </select>
+             entries
+          </label>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="dataTables_paginate paging_simple_numbers" id="example_paginate">
+          <a class="paginate_button previous disabled" aria-controls="example" data-dt-idx="0" tableindex="0" id="example_previous">
+            Previous
+          </a>
+          <span>
+            <a class="paginate_button current" aria-controls="example" data-dt-idx="1" tabindex="0">1</a>
+            <a class="paginate_button" aria-controls="example" data-dt-idx="2" tabindex="0">2</a>
+            <a class="paginate_button" aria-controls="example" data-dt-idx="3" tabindex="0">3</a>
+          </span>
+          <a class="paginate_button next" aria-controls="example" data-dt-idx="4" tabindex="0" id="example_next">Next</a>
+        </div>
+
+
+
+      </div> -->
+
+
+
+    <!-- </div>   -->
+    
+  <div class="container">  
+    <div class="row">
+      <div class="col-md-2">
+        <div class="form-group">
+          <input type="text" class="form-control" id="dateTime" placeholder="dateTime">
+          <a id="dateSearch" class="btn btn-default">Search</a>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="form-group">
+          <input type="text" class="form-control" id="city" placeholder="city">          
+          <a id="citySearch" class="btn btn-default">Search</a>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="form-group">
+          <input type="text" class="form-control" id="state" placeholder="state">
+          <a id="stateSearch" class="btn btn-default">Search</a>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="form-group">
+          <input type="text" class="form-control" id="country" placeholder="country">
+          <a id="countrySearch" class="btn btn-default">Search</a>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="form-group">
+          <input type="text" class="form-control" id="shape" placeholder="shape">
+          <a id="shapeSearch" class="btn btn-default">Search</a>
+        </div>
+      </div>
+    </div>
+
+  
+    <div class="row">
+      <div class="col-md-12">
+        <table id="myTable" class="table table-striped" >
+          <thead>
+            <tr>
+              <th>Date/Time</th>
+              <th>City</th>
+              <th>State</th>
+              <th>Country</th>
+              <th>Shape</th>
+              <th>Duration(Minutes)</th>
+              <th>Comment</th>
+            </tr>
+          </thead>
+          <tbody>
+              <!-- <tr>
+                  <td>Date/Time</td>
+                  <td>City</td>
+                  <td>State</td>
+                  <td>Country</td>
+                  <td>Shape</td>
+                  <td>Duration(Minutes)</td>
+                  <td>Comment</td>
+              </tr> -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <script>$(document).ready(function() {
+    $('#myTable').DataTable();
+} );;</script>
+  <script src="data.js" type="text/javascript"></script>
+  <script src="index.js" type="text/javascript"></script>
+</body>
+
+</html>
