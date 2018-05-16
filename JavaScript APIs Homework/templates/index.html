@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Belly Button Biodiversity!</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> -->
+</head>
+
+<body>
+    <div class="container">
+        <!-- <div class="jumbotron"> -->
+        <div class="jumbotron" style="text-align: center">
+            <h1>Belly Button Biodiversity Dashboard</h1>
+            <p>Use the interactive charts below to explore the dataset</p>
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-6">
+                <div class="row">
+                    <section>
+                        <h3>SELECT Sample:</h3>
+                        <select id="selDataset" onchange="getData(this.value)">
+                            
+                        </select>
+                    </section>    
+                </div>
+                <div class="row">        
+                    <table id="meta" class="table table-striped">
+                        <thead>Sample MetaData</thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>    
+            </div>
+
+            <div class="col-md-6">
+                <div id="pie"></div>
+                    <script>
+                        Plotly.d3.json('/pie', function(error, data){
+                            if (error) return console.warn(error);
+                                console.log(data)
+                            var layout = {
+                                title: "PIE CHART"}
+                            var PIE = document.getElementById('pie');
+                            Plotly.plot(PIE, data, layout);
+                        })
+                    </script>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div id="plot"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+</body>
+
+</html>
